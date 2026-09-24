@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\4AHIT\\SEW\\zsal26_4AHIT_SEW\\FigureList\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E684E308-45C6-448C-9B43-18363BC884FF}|FigureList\\FigureList.csproj|c:\\4ahit\\sew\\zsal26_4ahit_sew\\figurelist\\figurelist\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E684E308-45C6-448C-9B43-18363BC884FF}|FigureList\\FigureList.csproj|solutionrelative:figurelist\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\4AHIT\\SEW\\zsal26_4AHIT_SEW\\FigureList\\FigureList\\Program.cs",
+              "RelativeDocumentMoniker": "FigureList\\Program.cs",
+              "ToolTip": "C:\\4AHIT\\SEW\\zsal26_4AHIT_SEW\\FigureList\\FigureList\\Program.cs",
+              "RelativeToolTip": "FigureList\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-24T12:58:49.15Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
