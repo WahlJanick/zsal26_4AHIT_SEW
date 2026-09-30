@@ -132,22 +132,119 @@ namespace VerlinkteListen
         }
         public void Reverse()
         {
+            Figure next, prev = null, current = First;
 
+            while (current != null)
+            {
+                next = current.Next;
+                current.Next = prev;
+                prev = current;
+                current = next;
+            }
+            First = prev;
         }
         public void SwapNeighbors()
         {
+            if (First == null || First.Next == null)
+                return;
 
+            Figure previous = null;
+            Figure current = First;
+
+            First = First.Next;
+
+            while (current != null && current.Next != null)
+            {
+                Figure second = current.Next;
+                Figure nextPair = second.Next;
+
+                second.Next = current;
+                current.Next = nextPair;
+
+                if (previous != null)
+                {
+                    previous.Next = second;
+                }
+
+                previous = current;
+                current = nextPair;
+            }
         }
+
         public void Attach(LinkedFigureList other)
         {
+            if (other == null || other.First == null)
+                return;
 
+            if (First == null)
+            {
+                First = other.First;
+            }
+            else
+            {
+                Figure current = First;
+
+                while (current.Next != null)
+                {
+                    current = current.Next;
+                }
+
+                current.Next = other.First;
+            }
+
+            Count += other.Count;
+
+            other.First = null;
+            other.Count = 0;
         }
     }
     class Program
     {
         static void Main()
         {
-            
+            LinkedFigureList list = new LinkedFigureList();
+
+            list.Add(new Sphere("Kugel 1", 2));
+            list.Add(new Cube("Würfel 1", 3));
+            list.Add(new Sphere("Kugel 2", 4));
+
+            Console.WriteLine("Normale Liste:");
+            list.PrintAllFigures();
+
+            Console.WriteLine("\nGetAt(1):");
+            Console.WriteLine(list.GetAt(1));
+
+            Console.WriteLine("\nPush:");
+            list.Push(new Cube("Würfel Push", 2));
+            list.PrintAllFigures();
+
+            Console.WriteLine("\nPop:");
+            Console.WriteLine(list.Pop());
+            list.PrintAllFigures();
+
+            Console.WriteLine("\nInsertAt:");
+            list.InsertAt(1, new Sphere("Kugel Insert", 3));
+            list.PrintAllFigures();
+
+            Console.WriteLine("\nRemove:");
+            list.Remove(1);
+            list.PrintAllFigures();
+
+            Console.WriteLine("\nReverse:");
+            list.Reverse();
+            list.PrintAllFigures();
+
+            Console.WriteLine("\nSwapNeighbors:");
+            list.SwapNeighbors();
+            list.PrintAllFigures();
+
+            LinkedFigureList list2 = new LinkedFigureList();
+            list2.Add(new Cube("Würfel 2", 5));
+            list2.Add(new Sphere("Kugel 3", 1));
+
+            Console.WriteLine("\nAttach:");
+            list.Attach(list2);
+            list.PrintAllFigures();
         }
     }
 }
